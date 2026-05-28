@@ -10,14 +10,13 @@ st.set_page_config(
     layout="centered"
 )
 
-# Encabezado Académico
 # Encabezado Institucional y Académico
 col1, col2 = st.columns([1, 4]) # Crea dos columnas: una pequeña para el logo y otra grande para el texto
 
 with col1:
     try:
-        # Carga el logo desde el repositorio
-        st.image("logo_uce.png", use_column_width=True)
+        # Usamos una URL directa y transparente del logo de la UCE para evitar errores de archivo
+        st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Escudo_de_la_Universidad_Central_del_Ecuador.svg/800px-Escudo_de_la_Universidad_Central_del_Ecuador.svg.png", use_column_width=True)
     except Exception:
         # Si no encuentra el logo por alguna razón, no detendrá la app
         st.write("Logo UCE")
@@ -31,10 +30,7 @@ with col2:
 
 st.divider() # Añade una línea horizontal elegante para separar el encabezado del resto de la app
 
-# Descargo de responsabilidad profesional
-st.warning("⚠️ **Nota Académica:** Esta herramienta de visión artificial funciona como un vector de apoyo al análisis petrográfico y **no reemplaza la interpretación, criterios ni validación profesional del geólogo** en el microscopio.")
-
-# Descargo de responsabilidad profesional
+# Descargo de responsabilidad profesional (Corregido, ahora solo aparece una vez)
 st.warning("⚠️ **Nota Académica:** Esta herramienta de visión artificial funciona como un vector de apoyo al análisis petrográfico y **no reemplaza la interpretación, criterios ni validación profesional del geólogo** en el microscopio.")
 
 # Función optimizada para cargar el modelo YOLOv8 una sola vez
