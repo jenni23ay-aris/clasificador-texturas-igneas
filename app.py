@@ -11,12 +11,28 @@ st.set_page_config(
 )
 
 # Encabezado Académico
-st.title("🔬 Detección Automatizada de Texturas de Desequilibrio Magmático")
-st.markdown("""
-**Universidad Central del Ecuador - FIGEMPA** *Carrera de Geología | Cátedra de Petrología Ígnea*
+# Encabezado Institucional y Académico
+col1, col2 = st.columns([1, 4]) # Crea dos columnas: una pequeña para el logo y otra grande para el texto
 
-Esta aplicación web utiliza un modelo de aprendizaje supervisado **YOLOv8** para detectar y clasificar texturas de cristales en microfotografías de láminas delgadas (ej. textura sieve, reabsorción, coronas de reacción), optimizando el análisis de procesos dinámicos en sistemas magmáticos.
-""")
+with col1:
+    try:
+        # Carga el logo desde el repositorio
+        st.image("logo_uce.png", use_column_width=True)
+    except Exception:
+        # Si no encuentra el logo por alguna razón, no detendrá la app
+        st.write("Logo UCE")
+
+with col2:
+    st.markdown("## 🔬 Detección de Texturas de Desequilibrio Magmático")
+    st.markdown("""
+    #### Universidad Central del Ecuador
+    **Facultad de Ingeniería en Geología, Minas, Petróleos y Ambiental (FIGEMPA)** *Carrera de Geología | Cátedra de Petrología Ígnea*
+    """)
+
+st.divider() # Añade una línea horizontal elegante para separar el encabezado del resto de la app
+
+# Descargo de responsabilidad profesional
+st.warning("⚠️ **Nota Académica:** Esta herramienta de visión artificial funciona como un vector de apoyo al análisis petrográfico y **no reemplaza la interpretación, criterios ni validación profesional del geólogo** en el microscopio.")
 
 # Descargo de responsabilidad profesional
 st.warning("⚠️ **Nota Académica:** Esta herramienta de visión artificial funciona como un vector de apoyo al análisis petrográfico y **no reemplaza la interpretación, criterios ni validación profesional del geólogo** en el microscopio.")
