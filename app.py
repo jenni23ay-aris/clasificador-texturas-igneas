@@ -50,26 +50,23 @@ st.subheader("Análisis de Muestra de Lámina Delgada")
 uploaded_file = st.file_uploader("Sube una microfotografía (Formatos aceptados: JPG, JPEG, PNG)", type=["jpg", "jpeg", "png"])
 
 if uploaded_file is not None:
-    # Abrir y mostrar la imagen original subida por el usuario
-    image = Image.open(uploaded_file)
+    # 1. SOLUCIÓN AL COLOR: Forzar la imagen a formato RGB puro y eliminar canales de transparencia
+    image = Image.open(uploaded_file).convert("RGB")
+    
+    # Mostrar la imagen original con sus colores reales
     st.image(image, caption="Microfotografía original cargada", use_column_width=True)
     
     # Botón para iniciar la inferencia
     if st.button("Ejecutar Detección de Cristales"):
         with st.spinner("Analizando microestructura cristalina..."):
             try:
-                # Convertir la imagen PIL a formato adecuado para YOLOv8
-                img_input = np.array(image)
+                # 2. SOLUCIÓN A LA PREDICCIÓN: Enviar directamente la imagen PIL (YOLO maneja mejor el color así)
+                results = model(image)
                 
-                # Ejecutar inferencia con YOLOv8
-                # El modelo redimensiona internamente la imagen al tamaño de entrenamiento de forma automática
-                results = model(img_input)
-                
-                # Renderizar los resultados en la imagen (cajas, etiquetas y confianzas)
-                # results[0].plot() devuelve una matriz en formato BGR (OpenCV)
+                # Renderizar los resultados (YOLO devuelve una matriz BGR por defecto)
                 res_plotted = results[0].plot()
                 
-                # Convertir de BGR a RGB para mostrar correctamente en Streamlit
+                # 3. SOLUCIÓN VISUAL: Convertir la matriz BGR de vuelta a RGB para que Streamlit la dibuje correctamente
                 res_rgb = res_plotted[:, :, ::-1]
                 
                 st.success("✅ Procesamiento analítico completado")
