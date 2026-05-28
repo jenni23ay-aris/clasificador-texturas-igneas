@@ -16,7 +16,7 @@ col1, col2 = st.columns([1, 4]) # Crea dos columnas: una pequeña para el logo y
 with col1:
     try:
         # Usamos una URL directa y transparente del logo de la UCE para evitar errores de archivo
-        st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Escudo_de_la_Universidad_Central_del_Ecuador.svg/800px-Escudo_de_la_Universidad_Central_del_Ecuador.svg.png", use_column_width=True)
+        st.image("logo_uce.png", use_column_width=True)
     except Exception:
         # Si no encuentra el logo por alguna razón, no detendrá la app
         st.write("Logo UCE")
