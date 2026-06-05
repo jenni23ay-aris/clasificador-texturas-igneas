@@ -22,10 +22,10 @@ with col1:
         st.write("Logo UCE")
 
 with col2:
-    st.markdown("## 🔬 Detección de Texturas de Desequilibrio Magmático")
+    st.markdown("##  Detección de Texturas de Desequilibrio Magmático 🔬")
     st.markdown("""
     #### Universidad Central del Ecuador
-    **Facultad de Ingeniería en Geología, Minas, Petróleos y Ambiental (FIGEMPA)** *Carrera de Geología | Cátedra de Petrología Ígnea*
+    **Facultad de Ingeniería en Geología, Minas, Petróleos y Ambiental ** *Carrera de Geología | Cátedra de Petrología Ígnea*
     """)
 
 st.divider() # Añade una línea horizontal elegante para separar el encabezado del resto de la app
