@@ -31,8 +31,7 @@ with col2:
 st.divider() # Añade una línea horizontal elegante para separar el encabezado del resto de la app
 
 # Descargo de responsabilidad profesional (Corregido, ahora solo aparece una vez)
-st.warning("⚠️ **Nota Académica:** Esta herramienta de visión artificial funciona como un vector de apoyo al análisis 
-petrográfico y **no reemplaza la interpretación, criterios ni validación profesional del geólogo** en el microscopio.")
+st.warning("⚠️ **Nota Académica:** Esta herramienta de visión artificial funciona como un vector de apoyo al análisis petrográfico y **no reemplaza la interpretación, criterios ni validación profesional del geólogo** en el microscopio.")
 
 # Función optimizada para cargar el modelo YOLOv8 una sola vez
 @st.cache_resource
