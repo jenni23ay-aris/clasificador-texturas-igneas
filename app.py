@@ -22,7 +22,7 @@ with col1:
         st.write("Logo UCE")
 
 with col2:
-    st.markdown("##  Detección de Texturas de Desequilibrio Magmático 🔬")
+    st.markdown("##  🔬 Detección de Texturas de Desequilibrio Magmático ")
     st.markdown("""
     #### Universidad Central del Ecuador
     **Facultad de Ingeniería en Geología, Minas, Petróleos y Ambiental ** *Carrera de Geología | Cátedra de Petrología Ígnea*
